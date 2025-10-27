@@ -1,178 +1,7 @@
-body {
-  background-color: #121212;
-  color: #fff;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  min-height: 100vh;
-  padding: 20px;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-h1 {
-  color: #1DB954;
-  margin-bottom: 30px;
-  font-size: clamp(1.8rem, 5vw, 2.5rem);
-  text-align: center;
-  width: 100%;
-}
-
-/* Contenedor principal para desktop */
-.main-container {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  max-width: 1360px;
-  gap: 30px;
-  flex: 1;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
-  max-width: min(400px, 90vw);
-  width: 100%;
-  margin: 0 auto;
-}
-
-.mood {
-  font-size: clamp(1.8rem, 6vw, 2.5rem);
-  background-color: #1e1e1e;
-  border-radius: 15px;
-  text-align: center;
-  padding: clamp(15px, 4vw, 20px);
-  cursor: pointer;
-  transition: transform 0.2s, background 0.3s;
-  aspect-ratio: 1/1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 60px;
-}
-
-.mood:hover {
-  background-color: #1DB954;
-  transform: scale(1.05);
-}
-
-#result {
-  margin-top: 30px;
-  text-align: center;
-  width: 100%;
-  max-width: min(400px, 90vw);
-}
-
-.song {
-  margin-top: 15px;
-  background: #1e1e1e;
-  padding: 20px;
-  border-radius: 15px;
-  display: inline-block;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.song iframe {
-  border-radius: 10px;
-  width: 100%;
-  max-width: 300px;
-  height: 80px;
-}
-
-.song p {
-  margin: 10px 0 5px 0;
-  font-size: 0.9rem;
-}
-
-.song a {
-  display: inline-block;
-  margin-top: 8px;
-  color: #1DB954;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 0.9rem;
-}
-
-.song a:hover {
-  text-decoration: underline;
-}
-
-/* ===== DISEÑO DESKTOP (50/50) ===== */
-@media (min-width: 1024px) {
-  .main-container {
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 40px;
-    margin-top: 20px;
-  }
-
-  .grid-section {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .result-section {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 500px;
-    position: sticky;
-    top: 20px;
-  }
-
-  .grid {
-    grid-template-columns: repeat(4, 1fr);
-    max-width: 100%;
-    gap: 20px;
-  }
-
-  .mood {
-    font-size: 2.2rem;
-    padding: 25px;
-    min-height: 80px;
-  }
-
-  #result {
-    margin-top: 0;
-    max-width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .song {
-    margin-top: 0;
-    padding: 30px;
-    max-width: 400px;
-  }
-
-  /* IFRAME MÁS GRANDE Y CUADRADO EN DESKTOP */
-  .song iframe {
-    max-width: 350px;
-    height: 350px; /* Más cuadrado */
-    border-radius: 15px;
-  }
-
-  h1 {
-    margin-bottom: 40px;
-  }
-}
-
-/* ===== DISEÑO MOBILE (70/30) - SIN SCROLL ===== */
+/* ===== DISEÑO MOBILE (60/40) - MÁS ESPACIO PARA LA CANCIÓN ===== */
 @media (max-width: 767px) {
   body {
-    padding: 15px 15px 10px 15px;
+    padding: 12px 12px 8px 12px;
     height: 100vh;
     height: 100dvh;
     min-height: 0;
@@ -186,53 +15,53 @@ h1 {
 
   .main-container {
     height: 100%;
-    gap: 15px;
+    gap: 12px;
     justify-content: space-between;
     overflow: hidden;
   }
 
-  /* Sección de emojis - 70% */
+  /* Sección de emojis - 60% */
   .grid-section {
-    flex: 7;
+    flex: 6; /* 60% */
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 100%;
-    max-height: 70vh;
+    max-height: 60vh;
     overflow: hidden;
   }
 
   .grid {
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    gap: 8px;
     max-width: 100%;
     margin: 0;
     padding: 0 5px;
   }
 
   .mood {
-    font-size: clamp(1.6rem, 5vw, 1.8rem);
-    padding: clamp(10px, 2.5vw, 14px);
-    min-height: 45px;
-    border-radius: 12px;
+    font-size: clamp(1.5rem, 5vw, 1.7rem);
+    padding: clamp(9px, 2.2vw, 12px);
+    min-height: 42px;
+    border-radius: 10px;
   }
 
   h1 {
-    margin-bottom: 15px;
-    font-size: 1.6rem;
+    margin-bottom: 12px;
+    font-size: 1.5rem;
     flex-shrink: 0;
-    padding: 0 10px;
+    padding: 0 8px;
   }
 
-  /* Sección de resultado - 30% */
+  /* Sección de resultado - 40% */
   .result-section {
-    flex: 3;
+    flex: 4; /* 40% */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     width: 100%;
     min-height: auto;
-    max-height: 30vh;
+    max-height: 40vh;
     overflow: hidden;
   }
 
@@ -243,21 +72,22 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 10px;
+    padding: 0 8px;
   }
 
   .song {
     margin-top: 0;
-    padding: 12px;
+    padding: 15px;
     width: 100%;
     max-width: 100%;
     background: #1e1e1e;
     border-radius: 12px;
   }
 
+  /* IFRAME MÁS GRANDE EN MOBILE */
   .song iframe {
     max-width: 100%;
-    height: 80px;
+    height: 120px; /* Más alto para ver mejor la portada */
     border-radius: 8px;
   }
 
@@ -272,83 +102,27 @@ h1 {
 /* Móviles en orientación horizontal */
 @media (max-width: 767px) and (orientation: landscape) {
   body {
-    padding: 8px;
+    padding: 6px;
   }
   
   .main-container {
     flex-direction: row;
-    gap: 10px;
+    gap: 8px;
   }
   
   .grid-section {
-    flex: 6;
+    flex: 5; /* 50% en landscape */
     max-height: 100%;
   }
   
   .result-section {
-    flex: 4;
+    flex: 5; /* 50% en landscape */
     max-height: 100%;
     justify-content: center;
   }
   
   .grid {
     grid-template-columns: repeat(3, 1fr);
-    gap: 6px;
-  }
-  
-  .mood {
-    padding: 8px;
-    font-size: 1.3rem;
-    min-height: 40px;
-  }
-  
-  h1 {
-    display: none;
-  }
-  
-  .song {
-    padding: 10px;
-  }
-  
-  .song iframe {
-    height: 70px;
-  }
-}
-
-/* Móviles muy pequeños */
-@media (max-width: 480px) {
-  body {
-    padding: 10px 8px 5px 8px;
-  }
-  
-  .grid {
-    gap: 6px;
-  }
-  
-  .mood {
-    font-size: clamp(1.3rem, 4vw, 1.5rem);
-    padding: 8px;
-    min-height: 40px;
-    border-radius: 10px;
-  }
-  
-  .song {
-    padding: 10px;
-  }
-  
-  .song iframe {
-    height: 70px;
-  }
-  
-  h1 {
-    font-size: 1.4rem;
-    margin-bottom: 10px;
-  }
-}
-
-/* Ajustes para pantallas muy cortas */
-@media (max-width: 767px) and (max-height: 600px) {
-  .grid {
     gap: 5px;
   }
   
@@ -359,73 +133,112 @@ h1 {
   }
   
   h1 {
-    font-size: 1.3rem;
-    margin-bottom: 8px;
+    display: none;
   }
   
   .song {
-    padding: 8px;
+    padding: 12px;
   }
   
   .song iframe {
-    height: 60px;
+    height: 100px; /* Mantener altura en landscape */
   }
 }
 
-/* ===== MEDIA QUERIES PARA TABLETS Y DESKTOP ===== */
-
-/* Tablets horizontales y desktop pequeños */
-@media (max-width: 1366px) and (min-width: 1024px) {
-  .main-container {
-    max-width: 1200px;
-    gap: 30px;
+/* Móviles muy pequeños */
+@media (max-width: 480px) {
+  body {
+    padding: 10px 6px 5px 6px;
   }
   
   .grid {
-    gap: 15px;
+    gap: 5px;
   }
   
   .mood {
-    padding: 20px;
-    font-size: 2rem;
+    font-size: clamp(1.2rem, 4vw, 1.4rem);
+    padding: 7px;
+    min-height: 38px;
+    border-radius: 8px;
+  }
+  
+  .song {
+    padding: 12px;
   }
   
   .song iframe {
-    height: 300px;
-    max-width: 300px;
+    height: 110px; /* Un poco menos en móviles muy pequeños */
+  }
+  
+  h1 {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
   }
 }
 
-/* Tablets verticales */
-@media (max-width: 1023px) and (min-width: 768px) {
-  .grid {
-    grid-template-columns: repeat(4, 1fr);
-    max-width: min(500px, 90vw);
+/* Ajustes para pantallas muy cortas */
+@media (max-width: 767px) and (max-height: 600px) {
+  body {
+    padding: 8px 6px 4px 6px;
   }
   
-  .mood {
-    font-size: clamp(1.6rem, 4vw, 2rem);
-    padding: clamp(15px, 3vw, 18px);
+  .grid-section {
+    flex: 5; /* 50% en pantallas muy cortas */
+    max-height: 50vh;
   }
-}
-
-/* Pantallas muy grandes */
-@media (min-width: 1600px) {
-  .main-container {
-    max-width: 1500px;
+  
+  .result-section {
+    flex: 5; /* 50% en pantallas muy cortas */
+    max-height: 50vh;
   }
   
   .grid {
-    gap: 25px;
+    gap: 4px;
   }
   
   .mood {
-    font-size: 2.5rem;
-    padding: 30px;
+    padding: 5px;
+    font-size: 1.1rem;
+    min-height: 32px;
+  }
+  
+  h1 {
+    font-size: 1.2rem;
+    margin-bottom: 6px;
+  }
+  
+  .song {
+    padding: 10px;
   }
   
   .song iframe {
-    height: 400px;
-    max-width: 400px;
+    height: 90px;
+  }
+}
+
+/* Ajustes para pantallas altas en móvil */
+@media (max-width: 767px) and (min-height: 800px) {
+  .grid-section {
+    flex: 5; /* 50% en pantallas altas */
+    max-height: 50vh;
+  }
+  
+  .result-section {
+    flex: 5; /* 50% en pantallas altas */
+    max-height: 50vh;
+  }
+  
+  .grid {
+    gap: 12px;
+  }
+  
+  .mood {
+    padding: 14px;
+    font-size: 1.8rem;
+    min-height: 50px;
+  }
+  
+  .song iframe {
+    height: 140px; /* Más alto en pantallas grandes */
   }
 }
