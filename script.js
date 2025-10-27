@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       
       const mood = e.target.dataset.mood;
       
-      // Verificar si el mood existe en el JSON
       if (!songs[mood] || !Array.isArray(songs[mood]) || songs[mood].length === 0) {
         result.innerHTML = `<p>No hay canciones disponibles para este estado de ánimo.</p>`;
         return;
@@ -24,10 +23,9 @@ document.addEventListener("DOMContentLoaded", async () => {
       const list = songs[mood];
       const songUrl = list[Math.floor(Math.random() * list.length)];
 
-      // Extraer Track ID de forma más robusta
+      // Extraer Track ID
       let trackId;
       try {
-        // Manejar diferentes formatos de URL de Spotify
         const urlParts = songUrl.split('/track/');
         if (urlParts.length > 1) {
           trackId = urlParts[1].split('?')[0].split('&')[0];
@@ -40,17 +38,21 @@ document.addEventListener("DOMContentLoaded", async () => {
         return;
       }
 
-      // Verificar que el trackId tenga el formato correcto (22 caracteres alfanuméricos)
       if (!trackId || trackId.length !== 22 || !/^[a-zA-Z0-9]+$/.test(trackId)) {
         result.innerHTML = `<p>Error: ID de canción no válido.</p>`;
         return;
       }
 
+      // Usar el widget oficial de Spotify
       result.innerHTML = `
         <div class="song">
-          <iframe src="https://open.spotify.com/embed/track/${trackId}" 
-                  width="300" height="80" frameborder="0" 
-                  allowtransparency="true" allow="encrypted-media">
+          <iframe src="https://open.spotify.com/embed/track/${trackId}?utm_source=generator" 
+                  width="100%" 
+                  height="152" 
+                  frameBorder="0" 
+                  allowfullscreen="" 
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                  loading="lazy">
           </iframe>
           <br>
           <a href="${songUrl}" target="_blank" class="spotify-link">Abrir en Spotify 🎵</a>
