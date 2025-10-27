@@ -9,9 +9,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     const songs = await response.json();
     const grid = document.getElementById("moodGrid");
     const result = document.getElementById("result");
-    
-    // Objeto para guardar la última canción reproducida por cada mood
-    const lastPlayed = {};
 
     grid.addEventListener("click", e => {
       if (!e.target.classList.contains("mood")) return;
@@ -24,29 +21,8 @@ document.addEventListener("DOMContentLoaded", async () => {
       }
 
       const list = songs[mood];
-      
-      // Si solo hay una canción, siempre devolver esa
-      if (list.length === 1) {
-        const songUrl = list[0];
-        playSong(songUrl, mood, result);
-        return;
-      }
+      const songUrl = list[Math.floor(Math.random() * list.length)];
 
-      // Filtrar canciones excluyendo la última reproducida
-      const availableSongs = list.filter(song => song !== lastPlayed[mood]);
-      
-      // Si no hay canciones disponibles (solo quedaba la última), reiniciamos
-      const songUrl = availableSongs.length > 0 
-        ? availableSongs[Math.floor(Math.random() * availableSongs.length)]
-        : list[Math.floor(Math.random() * list.length)];
-
-      // Guardar la canción actual como última reproducida
-      lastPlayed[mood] = songUrl;
-      
-      playSong(songUrl, mood, result);
-    });
-
-    function playSong(songUrl, mood, resultElement) {
       // Extraer Track ID
       let trackId;
       try {
@@ -58,16 +34,17 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
       } catch (error) {
         console.error("Error al extraer Track ID:", error);
-        resultElement.innerHTML = `<p>Error al cargar la canción. URL no válida.</p>`;
+        result.innerHTML = `<p>Error al cargar la canción. URL no válida.</p>`;
         return;
       }
 
       if (!trackId || trackId.length !== 22 || !/^[a-zA-Z0-9]+$/.test(trackId)) {
-        resultElement.innerHTML = `<p>Error: ID de canción no válido.</p>`;
+        result.innerHTML = `<p>Error: ID de canción no válido.</p>`;
         return;
       }
 
-      resultElement.innerHTML = `
+      // Usar el widget oficial de Spotify
+      result.innerHTML = `
         <div class="song">
           <iframe src="https://open.spotify.com/embed/track/${trackId}?utm_source=generator" 
                   width="100%" 
@@ -81,7 +58,7 @@ document.addEventListener("DOMContentLoaded", async () => {
           <a href="${songUrl}" target="_blank" class="spotify-link">Abrir en Spotify 🎵</a>
         </div>
       `;
-    }
+    });
 
   } catch (error) {
     console.error("Error al cargar la aplicación:", error);

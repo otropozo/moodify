@@ -1,0 +1,50 @@
+{
+  "feliz": [
+      "https://open.spotify.com/track/60nZcImufyMA1MKQY3dcCH",
+      "https://open.spotify.com/track/3G69O9N3i4Bz5WGsH1J1B3"
+  ],
+  "triste": [
+    "https://open.spotify.com/track/4kflIGfjdZJW4ot2ioixTB",
+     "https://open.spotify.com/track/7LVHVU3tWfcxj5aiPFEW4Q"
+  ],
+  "gimnasio": [
+    "https://open.spotify.com/track/0j2T0R9dR9qdJYsB6si4Fv",
+    "https://open.spotify.com/track/4VqPOruhp5EdPBeR92t6lQ"
+  ],
+  "sexy": [
+    "https://open.spotify.com/track/4frLb7nL0GzG0ZvaQzXk0F",
+    "https://open.spotify.com/track/3B9O9gH0KcOSGfKXDEWgMq"
+  ],
+  "corazon_roto": [
+    "https://open.spotify.com/track/3zEniG8GkQ1Wk9l9tvdv2C",
+    "https://open.spotify.com/track/70LcF31zb1H0PyJoS1Sx1r"
+  ],
+  "enamorado": [
+    "https://open.spotify.com/track/7BqBn9nzAq8spo5e7cZ0dJ",
+    "https://open.spotify.com/track/0tgVpDi06FyKpA1z0VMD4v"
+  ],
+  "electronica": [
+    "https://open.spotify.com/track/2xLMifQCjDGFmkHkpNLD9h",
+    "https://open.spotify.com/track/0lHAMNU8RGiIObScrsRgmP"
+  ],
+  "enojo": [
+    "https://open.spotify.com/track/3ZOEytgrvLwQaqXreDs2Jx",
+    "https://open.spotify.com/track/4LZh9MKt0bL8P5VsWT4Z3Y"
+  ],
+  "fiesta": [
+    "https://open.spotify.com/track/32OlwWuMpZ6b0aN2RZOeMS",
+    "https://open.spotify.com/track/6habFhsOp2NvshLv26DqMb"
+  ],
+  "gaming": [
+    "https://open.spotify.com/track/3QF5lQJ1D0tYueZyZpBtqE",
+    "https://open.spotify.com/track/1P17dC1amhFzptugyAO7Il"
+  ],
+  "heavy": [
+    "https://open.spotify.com/track/5sICkBXVmaCQk5aISGR3x1",
+    "https://open.spotify.com/track/1Dq6a3J1oXh3V9bCjQXe9M"
+  ],
+  "hippie": [
+    "https://open.spotify.com/track/7pKfPomDEeI4TPT6EOYjn9",
+    "https://open.spotify.com/track/4pbJqGIASGPr0ZpGpnWkDn"
+  ]
+}
