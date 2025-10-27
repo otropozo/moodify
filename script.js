@@ -9,19 +9,18 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (!e.target.classList.contains("mood")) return;
     const mood = e.target.dataset.mood;
     const list = songs[mood];
-    const song = list[Math.floor(Math.random() * list.length)];
+    const songUrl = list[Math.floor(Math.random() * list.length)];
 
     // Extraer Track ID de la URL de Spotify
-    const trackId = song.spotify.split("/track/")[1].split("?")[0];
+    const trackId = songUrl.split("/track/")[1].split("?")[0];
 
     result.innerHTML = `
       <div class="song">
-        <iframe src="https://open.spotify.com/track/${trackId}" 
+        <iframe src="https://open.spotify.com/embed/track/${trackId}" 
                 width="300" height="80" frameborder="0" allowtransparency="true" 
                 allow="encrypted-media">
         </iframe>
-        <p><strong>${song.titulo}</strong> — ${song.artista}</p>
-        <a href="${song.spotify}" target="_blank">Abrir en Spotify 🎵</a>
+        <a href="${songUrl}" target="_blank">Abrir en Spotify 🎵</a>
       </div>
     `;
   });
