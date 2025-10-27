@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     result.innerHTML = `
       <div class="song">
-        <iframe src="https://open.spotify.com/embed/track/${trackId}" 
+        <iframe src="https://open.spotify.com/track/${trackId}" 
                 width="300" height="80" frameborder="0" allowtransparency="true" 
                 allow="encrypted-media">
         </iframe>
