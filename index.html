@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moodify 🎧</title>
+  <style>
+    body {
+      background-color: #121212;
+      color: #fff;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #1DB954;
+      margin-bottom: 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 400px;
+    }
+
+    .mood {
+      font-size: 2.5rem;
+      background-color: #1e1e1e;
+      border-radius: 20px;
+      text-align: center;
+      padding: 20px;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.3s;
+    }
+
+    .mood:hover {
+      background-color: #1DB954;
+      transform: scale(1.1);
+    }
+
+    #result {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .song {
+      background: #1e1e1e;
+      padding: 15px;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+
+    a {
+      color: #1DB954;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Moodify</h1>
+
+  <div class="grid" id="moodGrid">
+    <div class="mood" data-mood="feliz">😀</div>
+    <div class="mood" data-mood="triste">😢</div>
+    <div class="mood" data-mood="gimnasio">💪</div>
+    <div class="mood" data-mood="sexy">🫦</div>
+    <div class="mood" data-mood="corazon_roto">💔</div>
+    <div class="mood" data-mood="enamorado">💘</div>
+    <div class="mood" data-mood="electronica">🤖</div>
+    <div class="mood" data-mood="enojo">🖕</div>
+    <div class="mood" data-mood="fiesta">🎉</div>
+    <div class="mood" data-mood="gaming">🎮</div>
+    <div class="mood" data-mood="heavy">🤘</div>
+    <div class="mood" data-mood="hippie">☮️</div>
+  </div>
+
+  <div id="result"></div>
+
+  <script>
+    async function loadSongs() {
+      const response = await fetch("songs.json");
+      return await response.json();
+    }
+
+    loadSongs().then(songs => {
+      const grid = document.getElementById("moodGrid");
+      const result = document.getElementById("result");
+
+      grid.addEventListener("click", e => {
+        if (!e.target.classList.contains("mood")) return;
+        const mood = e.target.dataset.mood;
+        const list = songs[mood];
+        const song = list[Math.floor(Math.random() * list.length)];
+
+        result.innerHTML = `
+          <div class="song">
+            <h3>${song.titulo}</h3>
+            <p>${song.artista}</p>
+            <a href="${song.spotify}" target="_blank">Escuchar en Spotify 🎧</a>
+          </div>
+        `;
+      });
+    });
+  </script>
+</body>
+</html>

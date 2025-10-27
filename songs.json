@@ -1,0 +1,146 @@
+{
+  "feliz": [
+    {
+      "titulo": "Happy",
+      "artista": "Pharrell Williams",
+      "spotify": "https://open.spotify.com/track/60nZcImufyMA1MKQY3dcCH"
+    },
+    {
+      "titulo": "Walking on Sunshine",
+      "artista": "Katrina & The Waves",
+      "spotify": "https://open.spotify.com/track/3G69O9N3i4Bz5WGsH1J1B3"
+    }
+  ],
+  "triste": [
+    {
+      "titulo": "Someone Like You",
+      "artista": "Adele",
+      "spotify": "https://open.spotify.com/track/4kflIGfjdZJW4ot2ioixTB"
+    },
+    {
+      "titulo": "Fix You",
+      "artista": "Coldplay",
+      "spotify": "https://open.spotify.com/track/7LVHVU3tWfcxj5aiPFEW4Q"
+    }
+  ],
+  "gimnasio": [
+    {
+      "titulo": "Stronger",
+      "artista": "Kanye West",
+      "spotify": "https://open.spotify.com/track/0j2T0R9dR9qdJYsB6si4Fv"
+    },
+    {
+      "titulo": "Till I Collapse",
+      "artista": "Eminem",
+      "spotify": "https://open.spotify.com/track/4VqPOruhp5EdPBeR92t6lQ"
+    }
+  ],
+  "sexy": [
+    {
+      "titulo": "Earned It",
+      "artista": "The Weeknd",
+      "spotify": "https://open.spotify.com/track/4frLb7nL0GzG0ZvaQzXk0F"
+    },
+    {
+      "titulo": "Pony",
+      "artista": "Ginuwine",
+      "spotify": "https://open.spotify.com/track/3B9O9gH0KcOSGfKXDEWgMq"
+    }
+  ],
+  "corazon_roto": [
+    {
+      "titulo": "Back to December",
+      "artista": "Taylor Swift",
+      "spotify": "https://open.spotify.com/track/3zEniG8GkQ1Wk9l9tvdv2C"
+    },
+    {
+      "titulo": "Creep",
+      "artista": "Radiohead",
+      "spotify": "https://open.spotify.com/track/70LcF31zb1H0PyJoS1Sx1r"
+    }
+  ],
+  "enamorado": [
+    {
+      "titulo": "Just the Way You Are",
+      "artista": "Bruno Mars",
+      "spotify": "https://open.spotify.com/track/7BqBn9nzAq8spo5e7cZ0dJ"
+    },
+    {
+      "titulo": "Perfect",
+      "artista": "Ed Sheeran",
+      "spotify": "https://open.spotify.com/track/0tgVpDi06FyKpA1z0VMD4v"
+    }
+  ],
+  "electronica": [
+    {
+      "titulo": "Strobe",
+      "artista": "deadmau5",
+      "spotify": "https://open.spotify.com/track/2xLMifQCjDGFmkHkpNLD9h"
+    },
+    {
+      "titulo": "Titanium",
+      "artista": "David Guetta ft. Sia",
+      "spotify": "https://open.spotify.com/track/0lHAMNU8RGiIObScrsRgmP"
+    }
+  ],
+  "enojo": [
+    {
+      "titulo": "Killing in the Name",
+      "artista": "Rage Against the Machine",
+      "spotify": "https://open.spotify.com/track/3ZOEytgrvLwQaqXreDs2Jx"
+    },
+    {
+      "titulo": "Break Stuff",
+      "artista": "Limp Bizkit",
+      "spotify": "https://open.spotify.com/track/4LZh9MKt0bL8P5VsWT4Z3Y"
+    }
+  ],
+  "fiesta": [
+    {
+      "titulo": "Uptown Funk",
+      "artista": "Mark Ronson ft. Bruno Mars",
+      "spotify": "https://open.spotify.com/track/32OlwWuMpZ6b0aN2RZOeMS"
+    },
+    {
+      "titulo": "Despacito",
+      "artista": "Luis Fonsi ft. Daddy Yankee",
+      "spotify": "https://open.spotify.com/track/6habFhsOp2NvshLv26DqMb"
+    }
+  ],
+  "gaming": [
+    {
+      "titulo": "Legends Never Die",
+      "artista": "League of Legends",
+      "spotify": "https://open.spotify.com/track/3QF5lQJ1D0tYueZyZpBtqE"
+    },
+    {
+      "titulo": "Centuries",
+      "artista": "Fall Out Boy",
+      "spotify": "https://open.spotify.com/track/1P17dC1amhFzptugyAO7Il"
+    }
+  ],
+  "heavy": [
+    {
+      "titulo": "Enter Sandman",
+      "artista": "Metallica",
+      "spotify": "https://open.spotify.com/track/5sICkBXVmaCQk5aISGR3x1"
+    },
+    {
+      "titulo": "Ace of Spades",
+      "artista": "Motörhead",
+      "spotify": "https://open.spotify.com/track/1Dq6a3J1oXh3V9bCjQXe9M"
+    }
+  ],
+  "hippie": [
+    {
+      "titulo": "Imagine",
+      "artista": "John Lennon",
+      "spotify": "https://open.spotify.com/track/7pKfPomDEeI4TPT6EOYjn9"
+    },
+    {
+      "titulo": "Three Little Birds",
+      "artista": "Bob Marley",
+      "spotify": "https://open.spotify.com/track/4pbJqGIASGPr0ZpGpnWkDn"
+    }
+  ]
+}
