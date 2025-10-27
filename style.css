@@ -101,22 +101,6 @@ h1 {
   text-decoration: underline;
 }
 
-.placeholder-message {
-  color: #888;
-  font-style: italic;
-  text-align: center;
-  padding: 40px 20px;
-}
-
-.placeholder-message p {
-  margin: 0;
-  font-size: 1.1rem;
-}
-
-#result:not(:empty) .placeholder-message {
-  display: none;
-}
-
 /* ===== DISEÑO DESKTOP (50/50) ===== */
 @media (min-width: 1024px) {
   .main-container {
@@ -132,6 +116,7 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
   }
 
   .result-section {
@@ -172,9 +157,11 @@ h1 {
     max-width: 400px;
   }
 
+  /* IFRAME MÁS GRANDE Y CUADRADO EN DESKTOP */
   .song iframe {
     max-width: 350px;
-    height: 100px;
+    height: 350px; /* Más cuadrado */
+    border-radius: 15px;
   }
 
   h1 {
@@ -182,59 +169,71 @@ h1 {
   }
 }
 
-/* ===== DISEÑO MOBILE (70/30) ===== */
+/* ===== DISEÑO MOBILE (70/30) - SIN SCROLL ===== */
 @media (max-width: 767px) {
   body {
     padding: 15px 15px 10px 15px;
     height: 100vh;
-    height: 100dvh; /* Para navegadores modernos */
+    height: 100dvh;
     min-height: 0;
-    overflow: hidden; /* Evitar scroll general */
+    overflow: hidden;
+  }
+
+  html {
+    overflow: hidden;
+    height: 100%;
   }
 
   .main-container {
     height: 100%;
-    gap: 20px;
+    gap: 15px;
     justify-content: space-between;
+    overflow: hidden;
   }
 
   /* Sección de emojis - 70% */
   .grid-section {
-    flex: 7; /* 70% */
+    flex: 7;
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 100%;
+    max-height: 70vh;
+    overflow: hidden;
   }
 
   .grid {
     grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
+    gap: 10px;
     max-width: 100%;
     margin: 0;
+    padding: 0 5px;
   }
 
   .mood {
-    font-size: clamp(1.6rem, 5vw, 2rem);
-    padding: clamp(12px, 3vw, 16px);
-    min-height: 50px;
+    font-size: clamp(1.6rem, 5vw, 1.8rem);
+    padding: clamp(10px, 2.5vw, 14px);
+    min-height: 45px;
     border-radius: 12px;
   }
 
   h1 {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     font-size: 1.6rem;
     flex-shrink: 0;
+    padding: 0 10px;
   }
 
   /* Sección de resultado - 30% */
   .result-section {
-    flex: 3; /* 30% */
+    flex: 3;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     width: 100%;
     min-height: auto;
+    max-height: 30vh;
+    overflow: hidden;
   }
 
   #result {
@@ -244,121 +243,132 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 0 10px;
   }
 
   .song {
     margin-top: 0;
-    padding: 15px;
+    padding: 12px;
     width: 100%;
     max-width: 100%;
+    background: #1e1e1e;
+    border-radius: 12px;
   }
 
   .song iframe {
     max-width: 100%;
-    height: 70px;
+    height: 80px;
+    border-radius: 8px;
   }
 
+  /* Eliminar cualquier mensaje placeholder */
   .placeholder-message {
-    padding: 20px 15px;
-    font-size: 0.9rem;
-  }
-
-  .placeholder-message p {
-    font-size: 1rem;
+    display: none !important;
   }
 }
 
 /* ===== AJUSTES ESPECÍFICOS PARA MÓVILES ===== */
 
-/* Móviles en orientación vertical */
-@media (max-width: 767px) and (orientation: portrait) {
-  .grid-section {
-    flex: 7;
-  }
-  
-  .result-section {
-    flex: 3;
-  }
-}
-
 /* Móviles en orientación horizontal */
 @media (max-width: 767px) and (orientation: landscape) {
   body {
-    padding: 10px;
+    padding: 8px;
   }
   
   .main-container {
     flex-direction: row;
-    gap: 15px;
+    gap: 10px;
   }
   
   .grid-section {
-    flex: 6; /* 60% */
+    flex: 6;
+    max-height: 100%;
   }
   
   .result-section {
-    flex: 4; /* 40% */
+    flex: 4;
+    max-height: 100%;
+    justify-content: center;
   }
   
   .grid {
     grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
+    gap: 6px;
   }
   
   .mood {
-    padding: 10px;
-    font-size: 1.4rem;
-    min-height: 45px;
+    padding: 8px;
+    font-size: 1.3rem;
+    min-height: 40px;
   }
   
   h1 {
-    display: none; /* Ocultar título en landscape para ahorrar espacio */
+    display: none;
+  }
+  
+  .song {
+    padding: 10px;
+  }
+  
+  .song iframe {
+    height: 70px;
   }
 }
 
 /* Móviles muy pequeños */
 @media (max-width: 480px) {
   body {
-    padding: 10px 10px 5px 10px;
+    padding: 10px 8px 5px 8px;
   }
   
   .grid {
-    gap: 8px;
+    gap: 6px;
   }
   
   .mood {
-    font-size: clamp(1.4rem, 4vw, 1.7rem);
-    padding: 10px;
-    min-height: 45px;
+    font-size: clamp(1.3rem, 4vw, 1.5rem);
+    padding: 8px;
+    min-height: 40px;
     border-radius: 10px;
   }
   
   .song {
-    padding: 12px;
+    padding: 10px;
   }
   
   .song iframe {
-    height: 65px;
+    height: 70px;
   }
   
-  .placeholder-message {
-    padding: 15px 10px;
-  }
-  
-  .placeholder-message p {
-    font-size: 0.9rem;
+  h1 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
   }
 }
 
-/* Pantallas muy altas en móvil */
-@media (max-width: 767px) and (min-height: 800px) {
+/* Ajustes para pantallas muy cortas */
+@media (max-width: 767px) and (max-height: 600px) {
   .grid {
-    gap: 15px;
+    gap: 5px;
   }
   
   .mood {
-    padding: 18px;
-    font-size: 2rem;
+    padding: 6px;
+    font-size: 1.2rem;
+    min-height: 35px;
+  }
+  
+  h1 {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+  }
+  
+  .song {
+    padding: 8px;
+  }
+  
+  .song iframe {
+    height: 60px;
   }
 }
 
@@ -378,6 +388,11 @@ h1 {
   .mood {
     padding: 20px;
     font-size: 2rem;
+  }
+  
+  .song iframe {
+    height: 300px;
+    max-width: 300px;
   }
 }
 
@@ -407,5 +422,10 @@ h1 {
   .mood {
     font-size: 2.5rem;
     padding: 30px;
+  }
+  
+  .song iframe {
+    height: 400px;
+    max-width: 400px;
   }
 }
