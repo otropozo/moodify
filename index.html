@@ -4,76 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Moodify 🎧</title>
-  <style>
-    body {
-      background-color: #121212;
-      color: #fff;
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      min-height: 100vh;
-      padding: 20px;
-    }
-
-    h1 {
-      color: #1DB954;
-      margin-bottom: 20px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      max-width: 400px;
-    }
-
-    .mood {
-      font-size: 2.5rem;
-      background-color: #1e1e1e;
-      border-radius: 20px;
-      text-align: center;
-      padding: 20px;
-      cursor: pointer;
-      transition: transform 0.2s, background 0.3s;
-    }
-
-    .mood:hover {
-      background-color: #1DB954;
-      transform: scale(1.1);
-    }
-
-    #result {
-      margin-top: 30px;
-      text-align: center;
-    }
-
-    .song {
-  margin-top: 20px;
-  background: #1e1e1e;
-  padding: 15px;
-  border-radius: 10px;
-  display: inline-block;
-}
-
-.song p {
-  margin: 10px 0 5px 0;
-}
-
-.song a {
-  display: inline-block;
-  margin-top: 5px;
-  color: #1DB954;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.song a:hover {
-  text-decoration: underline;
-}
-
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <h1>Moodify</h1>
@@ -95,36 +26,6 @@
 
   <div id="result"></div>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", async () => {
-  const response = await fetch("songs.json");
-  const songs = await response.json();
-
-  const grid = document.getElementById("moodGrid");
-  const result = document.getElementById("result");
-
-  grid.addEventListener("click", e => {
-    if (!e.target.classList.contains("mood")) return;
-    const mood = e.target.dataset.mood;
-    const list = songs[mood];
-    const song = list[Math.floor(Math.random() * list.length)];
-
-    // Extraer Track ID de la URL de Spotify
-    const trackId = song.spotify.split("/track/")[1].split("?")[0];
-
-    result.innerHTML = `
-      <div class="song">
-        <iframe src="https://open.spotify.com/embed/track/${trackId}" 
-                width="300" height="80" frameborder="0" allowtransparency="true" 
-                allow="encrypted-media">
-        </iframe>
-        <p><strong>${song.titulo}</strong> — ${song.artista}</p>
-        <a href="${song.spotify}" target="_blank">Abrir en Spotify 🎵</a>
-      </div>
-    `;
-  });
-});
-
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
